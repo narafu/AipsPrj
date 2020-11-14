@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+
+<!-- css -->
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="/css/contents/u003/A01L1.css">
+</th:block>
+
+<!-- content -->
+<section id="main" layout:fragment="content">
+	<h1 class="hidden">content</h1>
+
+	<section id="topInfo">
+		<h1 class="hidden">top-info</h1>
+		<div class="large-title">
+			<span>회의실현황</span>
+		</div>
+		<div>
+			<i class="fas fa-bars"></i> <span class="middle-title">회의실현황</span>
+		</div>
+	</section>
+	<section id="schList">
+		<h1 class="hidden">search-list</h1>
+		<table class="schList-table">
+			<colgroup>
+				<col width="12%" />
+				<col width="38%" />
+				<col width="12%" />
+				<col width="*" />
+			</colgroup>
+			<tr>
+				<td class="search"><span>º</span> <span>회의실명</span></td>
+				<td><select name="" id="mtgNm">
+						<option value="">전체</option>
+						<option value="">선택2</option>
+						<option value="">선택3</option>
+				</select></td>
+				<td class="search"><span>º</span> <span>운영상태</span></td>
+				<td><select name="" id="operating">
+						<option value="">전체</option>
+						<option value="">선택2</option>
+						<option value="">선택3</option>
+				</select></td>
+				<td>
+					<button class="search-btn">조회</button>
+				</td>
+			</tr>
+			<tr>
+				<td class="search"><span>º</span> <span>예약가능시간</span></td>
+				<td colspan="3" class="reservation"><select name="" id="">
+						<option value="">--</option>
+						<option value="">1</option>
+						<option value="">24</option>
+				</select> <span>시</span> <select name="" id="">
+						<option value="">--</option>
+						<option value="">5</option>
+						<option value="">60</option>
+				</select> <span>분</span> <span>~</span> <select name="" id="">
+						<option value="">--</option>
+						<option value="">1</option>
+						<option value="">24</option>
+				</select> <span>시</span> <select name="" id="">
+						<option value="">--</option>
+						<option value="">5</option>
+						<option value="">60</option>
+				</select> <span>분</span></td>
+				<td>
+					<button class="search-btn">초기화</button>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section id="middleInfo">
+		<h1 class="hidden">middle-info</h1>
+		<div>
+			<i class="fas fa-bars"></i> <span class="middle-title">총게시물</span> <span
+				id="totalPost">89</span> <span>│</span> <span id="currentPage">1</span>
+			<span>/</span> <span id="totalPage">4</span>
+		</div>
+		<div>
+			<select name="" id="pageSize">
+				<option value="">10건</option>
+				<option value="">20건</option>
+				<option value="">40건</option>
+			</select>
+		</div>
+	</section>
+	<section id="mtgRmList">
+		<h1 class="hidden">meetingroom-list</h1>
+		<table class="mtgRmList-table">
+			<colgroup>
+				<col width="7.5%" />
+				<col width="15%" />
+				<col width="15%" />
+				<col width="15%" />
+				<col width="7.5%" />
+				<col width="10%" />
+				<col width="7.5%" />
+				<col width="7.5%" />
+				<col width="15%" />
+			</colgroup>
+			<tr>
+				<th>자동</th>
+				<th>회의실명</th>
+				<th>소재지</th>
+				<th>담당자</th>
+				<th>면적</th>
+				<th>수용인원</th>
+				<th>탁자</th>
+				<th>의자</th>
+				<th>운영상태</th>
+			</tr>
+			<tr th:each="list : ${U003A01List}">
+				<td>
+					<input type="checkbox" name="" id="">
+				</td>
+				<td th:with="id=${list.id}">	
+					<a th:attr="href=${id}">	
+						<span th:text="${list.mtgNm}"></span>
+					</a>
+				</td>
+				<td>
+					<th:block th:text="${list.place}"></th:block>
+					<span>호</span>
+				</td>
+				<td>
+					<span th:text="${list.charger}"></span>
+				</td>
+				<td>
+					<th:block th:text="${list.area}"></th:block>
+					<span>평</span>
+				</td>
+				<td>
+					<span th:text="${list.area}"></span>
+				</td>
+				<td>
+					<span th:text="${list.deskCo}"></span>
+				</td>
+				<td>
+					<span th:text="${list.chairCo}"></span>
+				</td>
+				<td>
+					<span th:text="${list.operSttus}"></span>
+				</td>
+			</tr>
+		</table>
+		<div class="botton-btn">
+			<button>저장</button>
+			<button onclick="location.href='A01F1'">등록</button>
+		</div>
+	</section>
+
+	<div class="pager">
+		<button>
+			<i class="fas fa-arrow-left"></i>
+		</button>
+		<ul id="pagerNm">
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">5</a></li>
+		</ul>
+		<button>
+			<i class="fas fa-arrow-right"></i>
+		</button>
+	</div>
+
+</section>
+
+</html>

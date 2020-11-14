@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- CDN -->
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+	crossorigin="anonymous"></script>
+
+<!-- 공통 CSS -->
+<link rel="stylesheet" href="/css/fragments/reset.css">
+<link rel="stylesheet" href="/css/fragments/style.css">
+<link rel="stylesheet" href="/css/fragments/side.css">
+<link rel="stylesheet" href="/css/layouts/layout.css">
+
+<!-- 개별 CSS -->
+<th:block layout:fragment="css"></th:block>
+
+<!-- 개별 JS -->
+<th:block layout:fragment="js"></th:block>
+
+</head>
+
+<body>
+
+	<!-- 헤더 -->
+	<header th:replace="fragments/header :: headerFragment"></header>
+
+	<main id="body">
+
+		<!-- 사이드바 -->
+		<section th:replace="fragments/side :: sideFragment"></section>
+
+		<!-- 메인 -->
+		<th:block layout:fragment="content"></th:block>
+
+	</main>
+
+	<!-- 풋터 -->
+	<footer th:replace="fragments/footer :: footerFragment"></footer>
+
+</body>
+
+</html>

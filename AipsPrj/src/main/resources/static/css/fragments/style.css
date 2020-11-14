@@ -1,0 +1,102 @@
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+select, input {
+    height: 30px;
+    border: solid #cccccc 1px;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+textarea {
+    padding: 10px;
+    border: none;
+}
+
+button {
+    padding: 5px 10px;
+    border: solid 1px #cccccc;
+}
+
+label {
+    font-size: 0.9em;
+}
+
+.large-title {
+    padding: 15px 0px;
+    margin: 15px 0px;
+    border-bottom: solid 1px #bbbbbb;
+    font-size: 1.2em;
+}
+
+.middle-title {
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+.necessary {
+    color: orangered;
+    font-weight: bold;
+}
+
+#topInfo {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+}
+
+table {
+    font-size: 0.8em;
+    margin: 10px 0px;
+    width: 100%;
+    border: solid 1px #aaaaaa;
+}
+
+th, td {
+    height: 37.5px;
+    border: solid 1px #dddddd;
+}
+
+th {
+    text-align: center;
+    background-color: #eeeeee;
+    font-weight: bold;
+}
+
+label {
+    font-size: 1.1em;
+}
+
+.fa-search, button, a {
+    cursor: pointer;
+}
+
+.fa-search {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+
+.large-input {
+    width: 300px;
+}
+
+.middle-input {
+    width: 150px;
+}
+
+.small-input {
+    width: 50px;
+}
+
+.readonly {
+    background-color: #eeeeee;
+}

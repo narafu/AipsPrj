@@ -1,0 +1,21 @@
+
+#header {
+    background-color: #032860;
+    height: 75px;
+}
+
+#body {
+    display: flex;
+}
+
+#main {
+    width: 1150px;
+    padding: 0px 25px;
+    margin-bottom: 50px;
+}
+
+#footer {
+    background-color: #032860;;
+    height: 75px;
+}
+

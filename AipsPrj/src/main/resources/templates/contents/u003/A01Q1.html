@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/layout">
+
+<!-- css -->
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="/css/contents/u003/A01Q1.css">
+</th:block>
+
+<!-- content -->
+        <section id="main" layout:fragment="content">
+            <h1 class="hidden">main</h1>
+
+            <section id="topInfo">
+                <h1 class="hidden">top-info</h1>
+                <div class="large-title">
+                    <span>회의실현황</span>
+                </div>
+                <div>
+                    <i class="fas fa-bars"></i>
+                    <span class="middle-title">회의실 정보</span>
+                </div>
+            </section>
+
+            <section id="mtgRm-form">
+                <h1 class="hidden">meetingroom-form</h1>
+                <form action="A01U1" method="POST">
+                    <table class="mthRm-table">
+                        <colgroup>
+                            <col width="12.5%">
+                            <col width="37.5%">
+                            <col width="12.5%">
+                            <col width="12.5%">
+                            <col width="12.5%">
+                            <col width="12.5%">
+                        </colgroup>
+                        <tr>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>회의실명</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.mtgNm}" class="large-input"></span>
+                            </td>
+                            <th>
+                                <span>연락처</span>
+                            </th>
+                            <td colspan="3">
+                                <span th:text="${vo.cttpc}" class="large-input"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>담당자</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.charger}" class="middle-input"></span>
+                             </td>
+                            <th>
+                                <span>부담당자</span>
+                            </th>
+                            <td colspan="3">
+                                <span th:text="${vo.shfcr}" class="middle-input"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>운영상태</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.operSttus}"></span>
+                            </td>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>운영시간</span>
+                            </th>
+                            <td colspan="3">
+                                <span th:text="${vo.operSttusHourSt}"></span>
+                                <span>:</span>
+                                <span th:text="${vo.operSttusMinSt}"></span>
+                                <span>~</span>
+                                <span th:text="${vo.operSttusHourEd}"></span>
+                                <span>:</span>
+                                <span th:text="${vo.operSttusMinEd}"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>사유</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.prvonsh}" class="large-input"></span>
+                            </td>
+                            <th>
+                                <span>예약신청 가능시간</span>
+                            </th>
+                            <td colspan="3">
+                                <span th:text="${vo.resveTimeHourSt}"></span>
+                                <span>:</span>
+                                <span th:text="${vo.resveTimeMinSt}"></span>
+                                <span>~</span>
+                                <span th:text="${vo.resveTimeHourEd}"></span>
+                                <span>:</span>
+                                <span th:text="${vo.resveTimeMinEd}"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>18시이후 예약</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.isDinnrResve}=='Y' ? '가능' : '불가능'"></span>
+                            </td>
+                            <th>
+                                <span>공휴일 예약</span>
+                            </th>
+                            <td colspan="3">
+                                <span th:text="${vo.isHldyResve}=='Y' ? '가능' : '불가능'"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>위치</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.place}" class="large-input"></span>
+                            </td>
+                            <th>
+                                <span>책상</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.deskCo}" class="small-input"></span>
+                                <span>개</span>
+                            </td>
+                            <th>
+                                <span>의자</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.chairCo}" class="small-input"></span>
+                                <span>개</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>마이크</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.micCo}" class="small-input"></span>
+                                <span>개</span>
+                            </td>
+                            <th>
+                                <span>프로젝트</span>
+                            </th>
+                            <td>
+                                <label>보유</label>
+                                <span th:text="${vo.isPrjctHold} == 'Y' ? '가능' : '불가능'">
+                            </td>
+                            <th>
+                                <span>랜</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.lanCo}" class="small-input"></span>
+                                <span>개</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>현수막크기</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.bannerW}" class="small-input"></span>
+                                <span>m</span>
+                                <span style="color: orangered;">&nbsp(가로)</span>
+                                <span th:text="${vo.bannerH}" class="small-input"></span>
+                                <span>m</span>
+                                <span style="color: orangered;">&nbsp(세로)</span>
+                            </td>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>면적</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.area}" class="small-input"></span>
+                                <span>평</span>
+                            </td>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>수용인원</span>
+                            </th>
+                            <td>
+                                <span th:text="${vo.aceptncNmpr}" class="small-input"></span>
+                                <span>명</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span class="necessary">*</span>
+                                <span>용도 및 이용시설</span>
+                            </th>
+                            <td colspan="5">
+                                <div th:text=${vo.prpos}></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>주지사항</span>
+                            </th>
+                            <td colspan="5">
+                                <div th:text=${vo.atpn}></div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </section>
+
+            <div class="botton-btn">
+                <button type="submit">수정</button>
+                <button onclick="location.href='A01L1'">목록</button>
+            </div>
+
+        </section>
+
+</html>

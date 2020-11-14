@@ -1,0 +1,70 @@
+
+#mtgNm, #operating {
+    width: 200px;
+}
+
+#schList {
+    padding-bottom: 25px;
+}
+#schList td {
+    text-align: left;
+    font-weight: bold;
+    border: none;
+    font-size: 1.1em;
+    padding-left: 20px;
+}
+    .search-btn {
+        width: 75px;
+        background-color: #292929;
+        color: white;
+    }
+    .schList-table {
+        background-color: #eeeeee;
+        padding: 10px;
+    }
+        .schList-table select {
+            margin: 0px 5px;
+        }
+
+#middleInfo {
+    display: flex;
+    justify-content: space-between;
+}
+    #totalPost, #currentPage {
+        color: orangered;
+        font-weight: bold;
+    }
+    #pageSize {
+        width: 70px;
+    }
+
+#mtgRmList td {
+    text-align: center;
+}
+
+.botton-btn {
+    display: flex;
+    justify-content: space-between;
+}
+    
+/* pager */
+.pager {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .pager button {
+        height: 26px;
+        width: 26px;
+        padding: 0px;
+    }
+    #pagerNm {
+        display: flex;
+    }
+    #pagerNm li {
+        height: 25px;
+        width: 25px;
+        margin: 0px 2px;
+        border: solid 1px #cccccc;
+        text-align: center;
+    }
